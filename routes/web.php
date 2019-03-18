@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'AddressController@index');
+Route::get('address/search', 'AddressController@search')->name('address.filter');
+Route::resource('address', 'AddressController');
+
